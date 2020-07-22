@@ -1,0 +1,21 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Order</h1>
+@using (Html.BeginForm("OrderMade", "Order", FormMethod.Post))
+{
+    @Html.AntiForgeryToken()
+    <p>Your name:</p>
+    <input type="text" name="customerName" />
+    <p>Your address:</p>
+    <input type="text" name="customerAddress" />
+    <p>Your email:</p>
+    <input type="text" name="customerEmail" />
+    <p>Your phone:</p>
+    <input type="text" name="customerPhone" />
+    <input type="submit" value="Make Order" />
+}
+
+

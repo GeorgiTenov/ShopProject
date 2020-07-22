@@ -1,0 +1,12 @@
+﻿
+@{
+    ViewData["Title"] = "Index";
+}
+
+@using (Html.BeginForm("Index","OrderManager",FormMethod.Get))
+{
+    @Html.AntiForgeryToken()
+    <input type="text" name="name" placeholder="Name..."/>
+    <input type="submit" value="Check" />
+}
+

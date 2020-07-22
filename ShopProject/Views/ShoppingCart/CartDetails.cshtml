@@ -1,0 +1,17 @@
+﻿@model IEnumerable<ShopProject.Models.CartItem>
+@{
+    ViewData["Title"] = "CartDetails";
+}
+
+<h1>Cart Details</h1>
+@foreach (var item in Model)
+{
+    <ul>
+        <li>@item.Product.Name - @item.Amount</li>
+        <li>@item.Product.Price</li>
+        <li><a asp-action="CartRemove" asp-controller="ShoppingCart" asp-route-id="@item.Product.Id">Remove</a></li>
+    </ul>
+}
+@await Component.InvokeAsync("ShopCartDetails")
+<a asp-action="Index" asp-controller="Order">Order</a>
+

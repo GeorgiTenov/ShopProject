@@ -1,0 +1,18 @@
+﻿@model IEnumerable<ShopProject.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+@foreach (var item in Model)
+{
+    <ul>
+        <li>@item.Name</li>
+        <li>@item.Price</li>
+        <li><a asp-action="Add" asp-controller="ShoppingCart" asp-route-id="@item.Id">Add</a></li>
+        <li><a asp-action="Remove" asp-controller="ShoppingCart" asp-route-id="@item.Id">Remove</a></li>
+    </ul>
+}
+
+
+<a asp-action="CartDetails" asp-controller="ShoppingCart">Go to Cart Details</a>
